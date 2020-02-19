@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 
 // configuration ===============================================================
-mongoose.connect(process.env.CUSTOMCONNSTR_MyConnectionString || database.localUrl); 
+mongoose.connect(process.env.CUSTOMCONNSTR_MyConnectionString); 
 
 // mongoose.connect("mongodb://mongo:27017/docker-demo", {
 //   useNewUrlParser: true
