@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://mongo:27017/docker-demo", {
-  useNewUrlParser: true
-});
+
+// configuration ===============================================================
+mongoose.connect(process.env.CUSTOMCONNSTR_MyConnectionString || database.localUrl); 
+
+// mongoose.connect("mongodb://mongo:27017/docker-demo", {
+//   useNewUrlParser: true
+// });
 const connection = mongoose.connection;
 connection.once("open", () => console.log("DB Connection Success"));
 
